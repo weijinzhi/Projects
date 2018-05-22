@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!--数据库驱动 -->
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!--数据库链接地址账号密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost/travel" userId="root" password="root">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!--生成Model类存放位置 -->
+		<javaModelGenerator targetPackage="com.travel.bean"
+			targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!--生成映射文件存放位置 -->
+		<sqlMapGenerator targetPackage="mapper" targetProject=".\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!--生成Dao类存放位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.travel.dao" targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!--生成对应表及类名 -->
+		<!-- 
+		<table tableName="t_user" domainObjectName="User"></table>
+		<table tableName="t_location_record" domainObjectName="LocationRecord"></table>
+		<table tableName="t_groupmenber" domainObjectName="GroupMenber"></table>
+		<table tableName="t_friend" domainObjectName="Friend"></table>
+		<table tableName="t_message" domainObjectName="Message"></table>
+		<table tableName="t_group_message" domainObjectName="GroupMessage"></table>
+		<table tableName="t_user_cicle_fence" domainObjectName="UserCicleFence"></table>
+		<table tableName="t_chat_message" domainObjectName="ChatMessage"></table>
+		<table tableName="t_group_notify" domainObjectName="GroupNotify"></table>
+		<table tableName="t_admin" domainObjectName="Admin"></table>
+		<table tableName="t_comment" domainObjectName="Comment"></table>
+		<table tableName="t_group_message_check" domainObjectName="GroupMessageCheck"></table>
+		<table tableName="t_scenic_spot" domainObjectName="ScenicSpot"></table>
+		<table tableName="t_group_circle_fence" domainObjectName="GroupCircle"></table>
+		 -->
+		<table tableName="t_advice" domainObjectName="Advice"></table>
+	</context>
+</generatorConfiguration>
